@@ -17,14 +17,13 @@ class MarketDataFetcher {
 		const char* CRUMB_FILE_NAME_;
 		const char* COOKIE_FILE_NAME_;
 		const char* DATA_FILE_NAME_;
-
-		std::string DateToEpochConverter(const std::string &date);
-		void StoreCookieAndCrumb(const std::string &stockName);
-		std::string CrumbExtraction();
+		void StoreCookieAndCrumb(const std::string &stockName) const;
+		std::string CrumbExtraction() const;
 
 	public:
 		MarketDataFetcher();
-		void FetchData(const std::string &stockName, const std::string &startDate, const std::string &endDate);
+		void FetchData(const std::string &stockName, const std::string &startDate, const std::string &endDate) const;
+		const char* GetDataFileName() const;
 		~MarketDataFetcher();
 };
 
